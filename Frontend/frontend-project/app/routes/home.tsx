@@ -1,9 +1,9 @@
 export default function Home() {
   return (
     <div className="page">
-      <h1>Информационная база рабочих мест сотрудников</h1>
+      <h1 className="page-title">Информационная база рабочих мест сотрудников</h1>
 
-      <p>
+      <p className="page-subtitle">
         Корпоративное приложение для поиска рабочего места сотрудника
       </p>
 

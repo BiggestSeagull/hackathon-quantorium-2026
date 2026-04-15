@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, Scripts, ScrollRestoration } from "react-router";
 import Sidebar from "./components/sidebar";
 import "./styles/global.css";
 import "./styles/layout.css";
@@ -20,6 +20,9 @@ export default function Root() {
             </main>
           </div>
         </div>
+
+        <ScrollRestoration />
+        <Scripts />
       </body>
     </html>
   );
