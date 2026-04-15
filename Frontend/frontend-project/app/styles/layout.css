@@ -7,9 +7,9 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  font-family: var(--font-family-base, Arial, sans-serif);
-  background: var(--color-bg-app, #eef2f6);
-  color: var(--color-text, #22324d);
+  font-family: Arial, sans-serif;
+  background: #eef2f6;
+  color: #22324d;
 }
 
 a {
@@ -29,7 +29,7 @@ select {
   display: grid;
   grid-template-columns: 260px 1fr;
   height: 100vh;
-  background: var(--color-bg-app, #eef2f6);
+  background: #eef2f6;
 }
 
 /* sidebar */
