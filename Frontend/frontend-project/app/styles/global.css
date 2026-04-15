@@ -58,7 +58,7 @@ img {
 .page-title {
   margin: 0;
   max-width: 100%;
-  font-size: 40px;
+  font-size: clamp(28px, 2vw, 42px);
   line-height: 1.15;
   font-weight: 700;
   color: #22324d;
@@ -66,6 +66,6 @@ img {
 
 .page-subtitle {
   margin: 0;
-  font-size: 15px;
+  font-size: clamp(14px, 0.9vw, 16px);
   color: #22324d;
 }

@@ -59,6 +59,7 @@
   border-radius: 14px;
   background: #fff;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .employees-card__title {
