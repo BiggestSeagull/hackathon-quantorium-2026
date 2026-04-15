@@ -28,7 +28,7 @@ select {
 .app-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  height: 100vh;
+  min-height: 100vh;
   background: #eef2f6;
 }
 
@@ -105,11 +105,14 @@ select {
 
 .app-content {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
   padding: 16px;
 }
 
 .page-content {
-  height: 100%;
+  flex: 1;
+  min-height: calc(100vh - 32px);
   padding: 24px;
   background: #f4f6fa;
   border: 1px solid #d9e1eb;
