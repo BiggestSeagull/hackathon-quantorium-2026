@@ -1,4 +1,4 @@
-export function Home() {
+export default function Home() {
   return (
     <div className="page">
       <h1>Информационная база рабочих мест сотрудников</h1>

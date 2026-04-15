@@ -1,4 +1,4 @@
-export function Employee() {
+export default function Employee() {
 
   return (
     <div className="page">
