@@ -3,16 +3,16 @@ import "./../styles/employees.css";
 export default function Employees() {
   return (
     <section className="employees-page">
-      <div className="employees-toolbar">
 
+      <div className="employees-toolbar">
         <div className="employees-search">
           <div className="employees-search__field">
-            <span>🔍</span>
+            <img src="/icons/search.svg" alt="" />
             <input type="text" placeholder="Поиск..." />
           </div>
 
           <button className="employees-search__button" type="button">
-            ⏳
+            <img src="/icons/filter.svg" alt="" />
           </button>
         </div>
       </div>
