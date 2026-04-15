@@ -26,9 +26,9 @@ export default function Employees() {
               <tr>
                 <th>№</th>
                 <th>ФИО</th>
+                <th>Город</th>
                 <th>Должность</th>
-                <th>Роль доступа</th>
-                <th>Кабинет</th>
+                <th>Подразделение</th>
                 <th>Действия</th>
               </tr>
             </thead>
