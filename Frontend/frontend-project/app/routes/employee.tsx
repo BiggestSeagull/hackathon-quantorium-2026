@@ -26,7 +26,7 @@ export default function Employee() {
 
       <div className="employee-topbar">
         <Link to="/employees" className="employee-back-link">
-        <img src="/icons/back.svg" alt="" />
+          <img src="/icons/back.svg" alt="" />
         </Link>
       </div>
       {/* Первый блок */}
@@ -89,24 +89,41 @@ export default function Employee() {
 
           {workplace.photoUrl ? (
             <div className="employee-media">
-              <img src={workplace.photoUrl} alt="Рабочее место сотрудника" />
+              <img src={workplace.photoUrl} alt="Картинка не загрузилась" />
             </div>
           ) : (
-            <div className="employee-empty-block">
-              отсутсвует
-            </div>
+            <div className="employee-empty-block">Картинка отсутсвует</div>
           )}
         </div>
 
         <div className="employee-card">
           <h2 className="employee-card__title">Рабочее место на карте</h2>
 
-          {workplace.floorPlanUrl ? (
+          {/* {workplace.floorPlanUrl ? (
             <div className="employee-media">
-              <img src={workplace.floorPlanUrl} alt="План этажа" />
+              <img src={workplace.floorPlanUrl} alt="Карта не загрузилась :(" />
             </div>
           ) : (
-            <div className="employee-empty-block">отсутсвует</div>
+            <div className="employee-empty-block">картинка отсутсвует</div>
+          )} */}
+
+          {workplace.floorPlanUrl ? (
+            <div className="employee-floor-plan">
+              <img src={workplace.floorPlanUrl} alt="Карта не загрузилась :(" />
+
+              {typeof workplace.x === "number" && typeof workplace.y === "number" && (
+                <span
+                  className="employee-floor-plan__marker"
+                  style={{
+                    // Расчитываем процент, кажется это надежнее просто пикселей 
+                    left: `${(workplace.x / 800) * 100}%`,
+                    top: `${(workplace.y / 600) * 100}%`,
+                  }}
+                />
+              )}
+            </div>
+          ) : (
+            <div className="employee-empty-block">Картинка отсутсвует</div>
           )}
         </div>
       </div>

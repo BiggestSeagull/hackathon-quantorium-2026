@@ -41,8 +41,8 @@ export const employeeDetailsMocks = [
       workplaceNumber: "15",
       photoUrl: "/files/wp1.png",
       floorPlanUrl: "/files/floor2plan.png",
-      x: 200,
-      y: 150,
+      x: 400,
+      y: 140,
     },
   },
   {
@@ -58,8 +58,8 @@ export const employeeDetailsMocks = [
       workplaceNumber: "16",
       photoUrl: "/files/wp2.png",
       floorPlanUrl: "/files/floor2plan.png",
-      x: 200,
-      y: 200,
+      x: 400,
+      y: 180,
     },
   },
 ];

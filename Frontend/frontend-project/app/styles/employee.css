@@ -108,10 +108,34 @@
 }
 
 .employee-media img {
-  width: 100%;
+  width: auto;
+  max-height: 400px;
 }
 
 .employee-empty-block {
   margin: 20px;
   text-align: center;
+}
+
+
+/* Точка на карте */
+.employee-floor-plan {
+  position: relative;
+}
+
+.employee-floor-plan img {
+  width: 100%;
+  height: auto;
+}
+
+.employee-floor-plan__marker {
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  background: #d62828;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }

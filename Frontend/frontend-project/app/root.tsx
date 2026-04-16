@@ -1,6 +1,5 @@
 import { Outlet, Scripts, ScrollRestoration } from "react-router";
 import Sidebar from "./components/sidebar";
-import "./styles/global.css";
 import "./styles/layout.css";
 
 export default function Root() {
