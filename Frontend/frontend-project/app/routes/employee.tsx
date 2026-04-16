@@ -23,8 +23,10 @@ export default function Employee() {
     <div className="employee-page">
 
       <div className="employee-topbar">
+        <Link to="/employees" className="employee-back-link">
         <img src="/icons/back.svg" alt="" />
-        <Link to="/employees" className="employee-back-link">Назад</Link>
+        Назад
+        </Link>
       </div>
 
       <div className="empoyee-grid">
