@@ -1,6 +1,8 @@
 import { Link, Navigate, useParams } from "react-router";
 import { employeeDetailsMocks } from "../mocks/employees";
 
+import "./../styles/employee.css";
+
 export default function Employee() {
 
   const { employeeId } = useParams();   // Эта штука нужна, чтобы получить id из ссылки страницы. см: routes.ts
@@ -25,10 +27,9 @@ export default function Employee() {
       <div className="employee-topbar">
         <Link to="/employees" className="employee-back-link">
         <img src="/icons/back.svg" alt="" />
-        Назад
         </Link>
       </div>
-
+      {/* Первый блок */}
       <div className="empoyee-grid">
         <div className="employee-card">
           <h1 className="employee-title">{fullName}</h1>
@@ -48,6 +49,7 @@ export default function Employee() {
         </div>
       </div>
 
+      {/* Второй блок */}
       <div className="employee-card">
 
         <h2 className="employee-card__title">Рабочее место</h2>
@@ -79,6 +81,36 @@ export default function Employee() {
         </div>
 
       </div>
+
+      {/* Картинки */}
+      <div className="employee-grid employee-grid--media">
+        <article className="employee-card">
+          <h2 className="employee-card__title">Фото рабочего места</h2>
+
+          {workplace.photoUrl ? (
+            <div className="employee-media">
+              <img src={workplace.photoUrl} alt="Рабочее место сотрудника" />
+            </div>
+          ) : (
+            <div className="employee-empty-block">
+              отсутсвует
+            </div>
+          )}
+        </article>
+
+        <article className="employee-card">
+          <h2 className="employee-card__title">Рабочее место на карте</h2>
+
+          {workplace.floorPlanUrl ? (
+            <div className="employee-media">
+              <img src={workplace.floorPlanUrl} alt="План этажа" />
+            </div>
+          ) : (
+            <div className="employee-empty-block">отсутсвует</div>
+          )}
+        </article>
+      </div>
+
 
     </div>
   )

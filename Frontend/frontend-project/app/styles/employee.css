@@ -1,0 +1,125 @@
+.employee-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.employee-topbar {
+  display: flex;
+  align-items: center;
+}
+
+.employee-back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  min-width: 48px;
+  border: 1px solid #bfc9d7;
+  border-radius: 10px;
+  background: #ffffff;
+  transition: background-color 0.2s ease;
+}
+
+.employee-back-link:hover {
+  background: #f5f8fc;
+}
+
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.employee-grid--media {
+  align-items: start;
+}
+
+.employee-card {
+  border: 1px solid #cfd7e3;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.employee-card--empty {
+  padding: 24px;
+}
+
+.employee-card__title {
+  margin: 0;
+  padding: 18px 20px;
+  border-bottom: 1px solid #cfd7e3;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: #22324d;
+}
+
+.employee-title {
+  margin: 0;
+  padding: 24px 20px 12px;
+  border-bottom: 1px solid #cfd7e3;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #22324d;
+}
+
+.employee-text {
+  margin: 0;
+  padding: 0 24px 24px;
+  color: #5f6f86;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.employee-info-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-info-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 16px 20px;
+  border-top: 1px solid #e5ebf2;
+}
+
+.employee-info-row:first-child {
+  border-top: 0;
+}
+
+.employee-info-label {
+  color: #5f6f86;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.employee-info-value {
+  color: #22324d;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.employee-media {
+  padding: 20px;
+}
+
+.employee-media img {
+  width: 100%;
+  border: 1px solid #d9e1eb;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.employee-empty-block {
+  margin: 20px;
+  padding: 40px 20px;
+  border: 1px dashed #cfd7e3;
+  border-radius: 12px;
+  text-align: center;
+  color: #5f6f86;
+  background: #fafbfd;
+}
