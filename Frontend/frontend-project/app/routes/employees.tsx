@@ -6,6 +6,7 @@ import "./../styles/employees.css";
 export default function Employees() {
   //? ЗАМЕНИТЬ КОГДА БУДЕТ БД и удалить /mocks
   const employees = employeesListMock.items;
+  let counter = 0;
 
 
   return (
@@ -43,7 +44,7 @@ export default function Employees() {
               {employees.length > 0 ? (
                 employees.map((employee) => (
                   <tr key={employee.id}>
-                    <td className="left">{employee.id}</td>
+                    <td className="left">{counter += 1}</td>
                     <td className="center">{employee.fullName}</td>
                     <td className="center">{employee.position}</td>
                     <td className="center">{employee.department}</td>

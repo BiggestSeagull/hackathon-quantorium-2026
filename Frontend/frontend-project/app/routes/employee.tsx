@@ -84,7 +84,7 @@ export default function Employee() {
 
       {/* Картинки */}
       <div className="employee-grid employee-grid--media">
-        <article className="employee-card">
+        <div className="employee-card">
           <h2 className="employee-card__title">Фото рабочего места</h2>
 
           {workplace.photoUrl ? (
@@ -96,9 +96,9 @@ export default function Employee() {
               отсутсвует
             </div>
           )}
-        </article>
+        </div>
 
-        <article className="employee-card">
+        <div className="employee-card">
           <h2 className="employee-card__title">Рабочее место на карте</h2>
 
           {workplace.floorPlanUrl ? (
@@ -108,7 +108,7 @@ export default function Employee() {
           ) : (
             <div className="employee-empty-block">отсутсвует</div>
           )}
-        </article>
+        </div>
       </div>
 
 
