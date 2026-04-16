@@ -11,18 +11,19 @@ export default function Employee() {
     }
   );
 
-  // Если попытка перехода на несуществуещего юзера
-  if(!employee){
+  // Если попытка перехода на несуществуещего юзера, выдаем ошибку
+  if (!employee) {
     return <Navigate to="*" />
   }
 
-  
-  const {fullName, position, department, workplace} = employee;
 
-  return(
+  const { fullName, position, department, workplace } = employee;
+
+  return (
     <div className="employee-page">
 
       <div className="employee-topbar">
+        <img src="/icons/back.svg" alt="" />
         <Link to="/employees" className="employee-back-link">Назад</Link>
       </div>
 
@@ -30,6 +31,7 @@ export default function Employee() {
         <div className="employee-card">
           <h1 className="employee-title">{fullName}</h1>
           <div className="employee-info-list">
+
             <div className="employee-info-row">
               <span className="employee-info-label">Должность: </span>
               <span className="employee-info-value">{position}</span>
@@ -39,12 +41,42 @@ export default function Employee() {
               <span className="employee-info-label">Подразделение: </span>
               <span className="employee-info-value">{department}</span>
             </div>
+
           </div>
         </div>
       </div>
 
+      <div className="employee-card">
 
+        <h2 className="employee-card__title">Рабочее место</h2>
+        <div className="employee-info-list">
+          <div className="employee-info-row">
+            <span className="employee-info-label">Город: </span>
+            <span className="employee-info-value">{workplace.city}</span>
+          </div>
 
+          <div className="employee-info-row">
+            <span className="employee-info-label">Здание: </span>
+            <span className="employee-info-value">{workplace.building}</span>
+          </div>
+
+          <div className="employee-info-row">
+            <span className="employee-info-label">Помещение: </span>
+            <span className="employee-info-value">{workplace.room}</span>
+          </div>
+
+          <div className="employee-info-row">
+            <span className="employee-info-label">Этаж: </span>
+            <span className="employee-info-value">{workplace.floor}</span>
+          </div>
+
+          <div className="employee-info-row">
+            <span className="employee-info-label">Номер рабочего места: </span>
+            <span className="employee-info-value">{workplace.workplaceNumber}</span>
+          </div>
+        </div>
+
+      </div>
 
     </div>
   )
