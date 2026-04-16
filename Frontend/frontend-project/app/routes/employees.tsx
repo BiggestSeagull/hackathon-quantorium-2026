@@ -1,8 +1,15 @@
+import { Link } from "react-router";
+import { employeesListMock } from "../mocks/employees";
+
 import "./../styles/employees.css";
 
 export default function Employees() {
+  //? ЗАМЕНИТЬ КОГДА БУДЕТ БД и удалить /mocks
+  const employees = employeesListMock.items;
+
+
   return (
-    <section className="employees-page">
+    <div className="employees-page">
 
       <div className="employees-toolbar">
         <div className="employees-search">
@@ -24,9 +31,8 @@ export default function Employees() {
           <table className="employees-table">
             <thead>
               <tr>
-                <th>№</th>
+                <th className="left">№</th>
                 <th>ФИО</th>
-                <th>Город</th>
                 <th>Должность</th>
                 <th>Подразделение</th>
                 <th>Действия</th>
@@ -34,15 +40,34 @@ export default function Employees() {
             </thead>
 
             <tbody>
+              {employees.length > 0 ? (
+                employees.map((employee) => (
+                  <tr key={employee.id}>
+                    <td className="left">{employee.id}</td>
+                    <td className="center">{employee.fullName}</td>
+                    <td className="center">{employee.position}</td>
+                    <td className="center">{employee.department}</td>
+                    <td className="center">
+                      <Link
+                        to={`/employees/${employee.id}`}
+                        className="employees-action-button"
+                      >
+                        <img src="/icons/info.svg" alt="" />
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              ) : (
               <tr>
-                <td colSpan={6} className="is-empty">
+                <td colSpan={5} className="is-empty">
                   Сотрудники пока отсутствуют
                 </td>
               </tr>
+              )}
             </tbody>
           </table>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
