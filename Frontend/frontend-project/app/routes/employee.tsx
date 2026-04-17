@@ -3,6 +3,13 @@ import { useEffect, useState } from "react";
 
 import "./../styles/employee.css";
 
+type RoomCoordinates = {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+};
+
 type Workplace = {
   city: string;
   building: string;
@@ -13,6 +20,7 @@ type Workplace = {
   floorPlanUrl?: string;
   x?: number;
   y?: number;
+  roomCoordinates?: RoomCoordinates;
 };
 
 type EmployeeResponse = {
@@ -180,11 +188,24 @@ export default function Employee() {
             <div className="employee-floor-plan">
               <img src={floorPlanSrc} alt="Карта не загрузилась :(" />
 
+              {workplace.roomCoordinates && (
+                <span
+                  className="employee-floor-plan__room"
+                  style={{
+                    // Расчитываем проценты для подсветки помещения
+                    left: `${(workplace.roomCoordinates.x / 800) * 100}%`,
+                    top: `${(workplace.roomCoordinates.y / 600) * 100}%`,
+                    width: `${(workplace.roomCoordinates.w / 800) * 100}%`,
+                    height: `${(workplace.roomCoordinates.h / 600) * 100}%`,
+                  }}
+                />
+              )}
+
               {typeof workplace.x === "number" && typeof workplace.y === "number" && (
                 <span
                   className="employee-floor-plan__marker"
                   style={{
-                    // Расчитываем процент, кажется это надежнее просто пикселей 
+                    // Расчитываем процент, кажется это надежнее просто пикселей
                     left: `${(workplace.x / 800) * 100}%`,
                     top: `${(workplace.y / 600) * 100}%`,
                   }}
@@ -197,5 +218,5 @@ export default function Employee() {
         </div>
       </div>
     </div>
-  )
+  );
 }

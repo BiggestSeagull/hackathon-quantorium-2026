@@ -128,6 +128,12 @@
   height: auto;
 }
 
+.employee-floor-plan__room {
+  position: absolute;
+  background: rgba(47, 95, 167, 0.568);
+
+}
+
 .employee-floor-plan__marker {
   position: absolute;
 
